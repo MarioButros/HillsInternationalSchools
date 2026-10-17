@@ -1,0 +1,27 @@
+EGYPT HILLS INTERNATIONAL SCHOOL - GO LIVE GUIDE
+------------------------------------------------
+GitHub login: MarioButros
+New repository name: egypt-hills-website
+New repository URL once created: https://github.com/MarioButros/egypt-hills-website
+Target live domain: https://hillsinternationalschools.com
+
+1. Create a NEW PUBLIC repository at https://github.com/new named egypt-hills-website. Do not overwrite MarioButros/mariobutros.github.io: it hosts iSchoola.com.
+2. Extract the supplied ZIP. Upload ALL EXTRACTED FILES and the assets folder to the root of your new repository; do NOT upload only the ZIP.
+3. Repo Settings > Pages > Deploy from a branch > main > /(root) > Save.
+4. Check the temporary site: https://mariobutros.github.io/egypt-hills-website/
+5. Once the preview works, Repo Settings > Pages > Custom domain: hillsinternationalschools.com > Save. Allow GitHub to create CNAME.
+6. In GoDaddy DNS for hillsinternationalschools.com, update existing WEBSITE A records for host @ to:
+    185.199.108.153
+    185.199.109.153
+    185.199.110.153
+    185.199.111.153
+   For www subdomain, use CNAME: www -> mariobutros.github.io (not the repository path).
+   DO NOT remove/modify MX, SPF, DKIM or other email TXT records; these support info@hillsinternationalschools.com.
+7. Wait for DNS / certificate readiness. GitHub says DNS changes may take up to 24 hours. Under GitHub Pages enable Enforce HTTPS after a valid certificate becomes available.
+8. Verify that both https://hillsinternationalschools.com and https://www.hillsinternationalschools.com show the Egypt Hills site and the official logos load.
+
+Notes:
+* The Contact Us form opens a composed message to info@hillsinternationalschools.com in the visitor's mail app. It does not send directly from the server. Confirm your email inbox works independently before cutover.
+* If GoDaddy uses other DNS hosts/nameservers, make DNS changes at the authoritative provider rather than assuming GoDaddy is hosting DNS.
+* Do not change domain DNS before GitHub Pages is provisioned, or the old site may go offline.
+* Official GitHub instructions: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
