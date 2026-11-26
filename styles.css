@@ -251,3 +251,17 @@ footer { background: var(--surface-high); padding: 38px max(24px, calc((100% - 1
   .hero-video { border-radius: 18px; }
   .hero-video-panel .hero-art-caption { padding: 14px 18px; }
 }
+
+/* Strategic partnerships */
+.partnerships { align-items: center; }
+.partnerships .button { margin-top: 8px; }
+.partnership-card { align-items: stretch; text-align: left; background: var(--card); color: var(--ink); }
+.partnership-card .partner-kicker { text-align: center; color: var(--muted); }
+.partnership-card .pathway-logo-frame { align-self: center; background: #fff; padding: 14px; border-radius: 16px; max-width: 250px; }
+.partner-directory { display: grid; gap: 9px; }
+.partner-directory h3 { font-size: 18px; margin: 0 0 5px; }
+.partner-entry { display: grid; gap: 2px; background: var(--surface-low); padding: 14px 16px; border: 1px solid var(--outline); border-radius: 16px; }
+.partner-entry strong { color: var(--primary); font-weight: 600; }
+.partner-entry span { font-size: 14px; color: var(--muted); }
+.partner-entry:hover { background: var(--surface-high); }
+@media (max-width: 650px) { .partnerships .button { width: 100%; } }
