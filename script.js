@@ -9,6 +9,7 @@ menuButton.addEventListener('click', () => {
 nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   nav.classList.remove('open');
   menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.setAttribute('aria-label', 'Open navigation');
 }));
 document.querySelector('#year').textContent = new Date().getFullYear();
 // Static GitHub Pages websites cannot send email themselves. Compose a complete
@@ -29,4 +30,33 @@ document.querySelector('#enquiryForm').addEventListener('submit', (event) => {
   const notice = document.querySelector('#formNotice');
   notice.textContent = 'Your email application should open with an enquiry draft. Please review it and press Send in your email app. If it did not open, use the school email link above.';
   window.location.href = mailto;
+});
+
+const themeToggle = document.querySelector('#themeToggle');
+const root = document.documentElement;
+function setTheme(theme) {
+  root.dataset.theme = theme;
+  const dark = theme === 'dark';
+  themeToggle.setAttribute('aria-pressed', String(dark));
+  themeToggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+  themeToggle.textContent = dark ? '☀' : '◐';
+  try { localStorage.setItem('ehis_theme', theme); } catch {}
+}
+let savedTheme;
+try { savedTheme = localStorage.getItem('ehis_theme'); } catch {}
+setTheme(savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'light');
+themeToggle.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
+function closeMenu() {
+  nav.classList.remove('open');
+  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.setAttribute('aria-label', 'Open navigation');
+}
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && nav.classList.contains('open')) {
+    closeMenu();
+    menuButton.focus();
+  }
+});
+document.addEventListener('click', event => {
+  if (nav.classList.contains('open') && !event.target.closest('.header')) closeMenu();
 });
