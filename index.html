@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=material3-1" />
-  <script defer src="script.js?v=material3-1"></script>
+  <link rel="stylesheet" href="styles.css?v=material3-video-1" />
+  <script defer src="script.js?v=material3-video-1"></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -43,10 +43,12 @@
         <div class="hero-actions"><a class="button button-gold" href="#admissions">Explore admissions </a><a class="text-link" href="#about">Discover our story </a></div>
         <div class="hero-proof"><span><strong>Grades 10–12</strong><small>American Diploma pathway</small></span><span><strong>Giza, Egypt</strong><small>Locally rooted, globally minded</small></span></div>
       </div>
-      <div class="hero-art" role="img" aria-label="Architectural-inspired graphic with golden mountain peak representing aspiration">
-        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
-        <svg viewBox="0 0 600 620" aria-hidden="true" class="mountain"><defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9d29c"/><stop offset="1" stop-color="#ba8e4a"/></linearGradient></defs><circle cx="310" cy="294" r="205" fill="none" stroke="#ffffff" stroke-opacity=".13" stroke-width="2"/><path d="M42 486 L230 201 L328 327 L408 161 L588 486 Z" fill="#20465b"/><path d="M138 486 L408 161 L588 486 Z" fill="url(#gold)" opacity=".94"/><path d="M230 201 L328 327 L281 365 L190 262 Z" fill="#d1b575"/><path d="M408 161 L460 255 L393 245 L352 318 Z" fill="#f5e5bc"/><path d="M60 486 H580" stroke="#f9e8c2" stroke-width="3"/><path d="M120 520 H545 M190 543 H475" stroke="#d7bb83" stroke-opacity=".45" stroke-width="2"/></svg>
-        <div class="hero-art-caption"><span class="cap-line"></span><span>Building paradigms of success</span></div>
+      <div class="hero-art hero-video-panel">
+        <video class="hero-video" id="campusVideo" muted loop playsinline controls preload="metadata" aria-label="Egypt Hills promotional video">
+          <source src="assets/hero-campus.mp4" type="video/mp4" />
+          Your browser does not support embedded video.
+        </video>
+        <div class="hero-art-caption">Building paradigms of success</div>
       </div>
       
     </section>

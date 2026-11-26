@@ -60,3 +60,9 @@ document.addEventListener('keydown', event => {
 document.addEventListener('click', event => {
   if (nav.classList.contains('open') && !event.target.closest('.header')) closeMenu();
 });
+
+const campusVideo = document.querySelector('#campusVideo');
+if (campusVideo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  campusVideo.muted = true;
+  campusVideo.play().catch(() => { /* Native controls remain available. */ });
+}
